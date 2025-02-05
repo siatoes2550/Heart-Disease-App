@@ -1,0 +1,19 @@
+if we has const like this 
+const employee = {
+  John evan:{
+    position: "saleman",
+    call: 1234,
+    email: John@gmail.com
+  },
+  Kate bright:{
+    position: "call center",
+    call: 2231,
+    email: Kate@gmail.com
+  },
+  Frank Furt:{
+    position: "head of r&d",
+    call: 64123,
+    email: frank@gmail.com
+  },
+}
+   
