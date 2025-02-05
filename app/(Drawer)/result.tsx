@@ -1,7 +1,7 @@
 import { View, StyleSheet, Pressable, Dimensions, Modal, useColorScheme } from 'react-native'
 import React,{useCallback, useContext, useEffect, useState} from 'react'
 import { ThemedPressable, ThemedText, ThemedView, usecustomthemedcolor, usethemedcolor } from '@/Hooks/ThemeManager'
-import { useFocusEffect, useRouter } from 'expo-router';
+import { Link, useFocusEffect, useRouter } from 'expo-router';
 import { accumulatedriskcontext, Globalappcontext, handleformcontext } from '@/Hooks/ContextProvider';
 import { LinearGradient } from 'expo-linear-gradient';
 import { getmaximumrisk } from '@/Constant/DiagnosisList';
@@ -18,6 +18,7 @@ const result = () => {
   const calculatedrisk:number = Math.round(Calculate({totalriskaccumulation:accumulatedrisk}));
   const {hasdone} = useContext(handleformcontext);
   const [colortouse, setcorlotouse] = useState<any>()
+  const router = useRouter();
 
     const gradient = () => {
       if (useColorScheme()=="light"){
@@ -161,7 +162,6 @@ const result = () => {
       color: usecustomthemedcolor("text"),
     }
   });
-  const router = useRouter()
 
   const warnmessage = () => {
     if (calculatedrisk < 20){
@@ -227,22 +227,18 @@ const result = () => {
         <ThemedView style={[resultstyle.modalbg,]}>
           <ThemedView ColorToUse='uiinner' style={resultstyle.modalchildren}>
             <ThemedText style={{fontSize:28, textAlign:"center"}}>กรุณาไปทำแบบฟอร์มก่อน!</ThemedText>
-            <ThemedPressable style={{width:"80%", height:"33%", marginTop: 12, borderRadius: 8, justifyContent:"center", alignItems:"center"}} onPress={()=>onpress()}>
-              <ThemedText style={{fontSize:28, textAlign: "center"}} type='bold'>กลับไปยังหน้าแบบฟอร์ม</ThemedText>
-            </ThemedPressable>
+            <Link href={"/"} asChild={true}>
+              <ThemedPressable style={{width:"80%", height:"33%", marginTop: 12, borderRadius: 8, justifyContent:"center", alignItems:"center"}} onPress={()=>setisVisible(false)}>
+                <ThemedText style={{fontSize:28, textAlign: "center"}} type='bold'>กลับไปยังหน้าแบบฟอร์ม</ThemedText>
+              </ThemedPressable>
+            </Link>
           </ThemedView>
         </ThemedView>
       </Modal>
     )
   };
 
-  const homepush = () =>{
-    router.push({pathname:"/(Drawer)"})
-    setrateusvisible(false)
-  };
-
   const ratepush = () =>{
-    router.push({pathname:"/Rate"})
     setrateusvisible(false)
   }
 
@@ -253,21 +249,20 @@ const result = () => {
           <ThemedView ColorToUse='uiinner' style={[resultstyle.modalchildren,{height: "auto", width:isweb() == true? "60%":"80%"}]}>
            <ThemedText style={{fontSize:28, textAlign:"center"}}>{localization("rate")}</ThemedText>
            <ThemedText style={{fontSize:16, textAlign:"center"}}>Please provide your insight and comment on how could we made this app better!</ThemedText>
-           <Pressable onPress={()=>ratepush()} style={resultstyle.returnnavbutton}>
-              <ThemedText style={resultstyle.buttonfont}>{localization("takemethere")}</ThemedText>
-            </Pressable>
-           <Pressable onPress={()=>homepush()} style={resultstyle.returnnavbutton}>
-              <ThemedText style={resultstyle.buttonfont}>{localization("Nothank")}</ThemedText>
-            </Pressable>
+           <Link href={"/Rate"} asChild={true}>
+            <Pressable onPress={()=>ratepush()} style={resultstyle.returnnavbutton}>
+                <ThemedText style={resultstyle.buttonfont}>{localization("takemethere")}</ThemedText>
+              </Pressable>
+           </Link>
+            <Link href={"/"} asChild={true}>
+              <Pressable onPress={()=>ratepush()} style={resultstyle.returnnavbutton}>
+                <ThemedText style={resultstyle.buttonfont}>{localization("Nothank")}</ThemedText>
+              </Pressable>
+            </Link>
           </ThemedView>
         </ThemedView>
       </Modal>
     )
-  };
-
-  const onpress =()=>{
-    router.push({pathname:"/Form"}) ,
-    setisVisible(false)
   };
 
   return (

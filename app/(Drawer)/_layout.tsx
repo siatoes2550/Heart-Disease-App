@@ -5,6 +5,7 @@ import Customdrawercontent from "@/assets/Content/Customdrawercontent";
 import { currentwindowdimention } from "@/Hooks/DynamicElements";
 import { useContext } from "react";
 import { Stack } from "expo-router";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function Layout() {
   return (
@@ -22,6 +23,11 @@ export default function Layout() {
         />
         <Stack.Screen
           name="result" 
+          options={{
+          }}
+        />
+        <Stack.Screen
+          name="Rate" 
           options={{
           }}
         />

@@ -33,7 +33,7 @@ const rate = () => {
   const maxselection = maxratedata()
   const returnhome = () =>{
     setisVisible(false);
-    router.push({pathname:"/(Drawer)"})
+    router.replace("/(Drawer)")
   };
 
   const whenselected = () => {
@@ -80,7 +80,7 @@ const rate = () => {
     <ScrollView style={stylesheet.background}>
       <View style = {stylesheet.marginizedview}>
         <View style={stylesheet.upperbutton}>
-          <Pressable style={stylesheet.returnbutton}>
+          <Pressable style={stylesheet.returnbutton} onPress={()=> router.push("/")}>
             <Ionicons name="arrow-back" size={24} color={usecustomthemedcolor("text")} />
             <ThemedText style={stylesheet.returnbuttontext}>back</ThemedText>
           </Pressable>
@@ -101,7 +101,6 @@ const rate = () => {
         <ThemedText style={stylesheet.buttonfont}>{localization("submit")}</ThemedText>
       </Pressable>
       <Thankmodal>
-
       </Thankmodal>
     </ScrollView>
   )

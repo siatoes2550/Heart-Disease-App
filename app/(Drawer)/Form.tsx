@@ -154,7 +154,7 @@ const Form = () => {
             <Textcontentselector objkey={diagnosis.objkey} onhasselected = {updatetotalhasselected} onriskfactorchange={changehandler} option={diagnosis.option} title={diagnosis.description} Subdescription={diagnosis.Subdescription} Renderpriority={diagnosis.Renderpriority} key={`${diagnosis.Renderpriority}`} handleonpressout={splices}>
             </Textcontentselector>
           )
-        })}]
+        })}
         <ThemedPressable ColorToUse={"topbar2"} style={formstyle.Pressing} onPress={()=>calculate()}>
           <ThemedText type="semibold" style={formstyle.Text}>คำนวนเลย!</ThemedText>
         </ThemedPressable>
