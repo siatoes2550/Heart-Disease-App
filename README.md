@@ -17,8 +17,27 @@ An react native expo project for quick cardiovescular risk diagnosis.
  - `expo CLI`
  - `expo go` ( For running app with mobile devices pre-compilation)
 ### Installation
- 1. Clone this repositories on your local devices
+ 1. Clone this repositories on your local devices.
  ```
- git clone https://github.com/siatoes2550/Heart-Disease-App/
+ git clone https://github.com/siatoes2550/Heart-Disease-App/(https://github.com/siatoes2550/Heart-Disease-App.git)
  ```
-2
+ 2. Navigate to project directories on your local devices.
+ 3. Install all necessary library/package.
+ ```
+ npm install
+ ```
+ 4. Modify any source code to your liking
+ 5. To run app on testing environment, place this command into your terminal ( Make sure that cd is on the app root directories )
+ ```
+ npm start
+ ```
+
+ [!IMPORTANT]
+ To access google sheet function, you must create an .env file on project root directories and paste the following data:
+ ```
+ EXPO_PUBLIC_APIKEY: "INSERT_HERE" //Your backend api access key.
+ EXPO_PUBLIC_DATA_SERVER: "https://example.app/" //Link to your API data server
+ EXPO_PUBLIC_DATA_SERVERRATE: "https://example.app/getdata"
+ ```
+
+
