@@ -37,7 +37,50 @@ An react native expo project for quick cardiovescular risk diagnosis.
  ```
  EXPO_PUBLIC_APIKEY: "INSERT_HERE" //Your backend api access key.
  EXPO_PUBLIC_DATA_SERVER: "https://example.app/" //Link to your API data server
- EXPO_PUBLIC_DATA_SERVERRATE: "https://example.app/getdata"
  ```
 
+> [!CAUTION]
+> Current known issues:
+>  - Theming is janky and will only apply on the first page load.
+>  - Invalid hook call error are pretty common.
 
+## Export && publising an application
+### Exporting && deploying to web 
+ 1. First, Run this following command on your terminal,
+    ```
+    npm expo export -p web
+    ```
+ 2. Your compiled web deployment should be located on the "/dist/" directories,
+ 3. ( optional ) test your deployment with the command ``` npx expo serve ```
+ 4. Now to deploy to web host, The method are different for each hosting provider ( Read more at https://docs.expo.dev/guides/publishing-websites/ )
+      For this instruction, We'll be using Vercel as our hosting provider.
+       4.1.Install vercel CLI
+       ```
+       npm install -g netlify-cli
+       ```
+       4.2.Create ```vercel.json``` file at your root directories and paste the following
+       ```
+       {
+        "buildCommand": "expo export -p web",
+        "outputDirectory": "dist",
+        "devCommand": "expo",
+        "cleanUrls": true,
+        "framework": null,
+        "rewrites": [
+          {
+           "source": "/(.*)",
+           "destination":"/index.html"
+          }
+        ]
+      }
+       ```
+       4.3. To deploy, run the following command in your terminal
+       ```
+       vercel
+       ```
+       4.4. To update deployment into production build, run the following command in your terminal
+       ```
+       vercel --prod
+       ```
+### Export && Deploy to mobile
+  
