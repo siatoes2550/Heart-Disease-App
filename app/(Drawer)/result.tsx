@@ -248,7 +248,7 @@ const result = () => {
          <ThemedView style={[resultstyle.modalbg]}>
           <ThemedView ColorToUse='uiinner' style={[resultstyle.modalchildren,{height: "auto", width:isweb() == true? "60%":"80%"}]}>
            <ThemedText style={{fontSize:28, textAlign:"center"}}>{localization("rate")}</ThemedText>
-           <ThemedText style={{fontSize:16, textAlign:"center"}}>Please provide your insight and comment on how could we made this app better!</ThemedText>
+           <ThemedText style={{fontSize:16, textAlign:"center"}}>{localization("commenttitle")}</ThemedText>
            <Link href={"/Rate"} asChild={true}>
             <Pressable onPress={()=>ratepush()} style={resultstyle.returnnavbutton}>
                 <ThemedText style={resultstyle.buttonfont}>{localization("takemethere")}</ThemedText>
@@ -271,7 +271,7 @@ const result = () => {
         <Image contentFit="scale-down" style={resultstyle.illustration} source={illustration()}></Image>
         <ThemedView ColorToUse={"innerresultUI"} style={resultstyle.innnerview} >
           <View style={[resultstyle.containerinnerstyle]} >
-            <ThemedText type='bold' style={[resultstyle.headerfont,{marginBottom:isweb() == true? 12:8}]}>คุณมีความเสี่ยง</ThemedText>
+            <ThemedText type='bold' style={[resultstyle.headerfont,{marginBottom:isweb() == true? 12:8}]}>{localization("risktitle")}</ThemedText>
             <View style={resultstyle.progressbarview}>
               <Progressbar percentfilled={calculatedrisk}></Progressbar>
               <ThemedText style={[resultstyle.headerfont,{marginLeft: isweb() == true? 24:14}]} type='bold'>{calculatedrisk}%</ThemedText>

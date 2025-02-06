@@ -47,7 +47,8 @@ const index = () => {
       gradientcolor2: "#a630fa",
       key: 1,
       WidthScale: 2,
-      action: action.Helper
+      action: action.Helper,
+      hiddenonweb: true,
     },
     {
       title: localization("setting"),
