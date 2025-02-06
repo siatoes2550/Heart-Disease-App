@@ -53,7 +53,8 @@ An react native expo project for quick cardiovescular risk diagnosis.
  2. Your compiled web deployment should be located on the "/dist/" directories,
  3. ( optional ) test your deployment with the command ``` npx expo serve ```
  4. Now to deploy to web host, The method are different for each hosting provider ( Read more at https://docs.expo.dev/guides/publishing-websites/ )
-      For this instruction, We'll be using Vercel as our hosting provider.
+    For this instruction, We'll be using Vercel as our hosting provider.
+    
        4.1.Install vercel CLI
        ```
        npm install -g netlify-cli
@@ -82,5 +83,6 @@ An react native expo project for quick cardiovescular risk diagnosis.
        ```
        vercel --prod
        ```
+       
 ### Export && Deploy to mobile
   
