@@ -15,4 +15,10 @@ An react native expo project for quick cardiovescular risk diagnosis.
 ### Pre-requisites
  - `nodejs.`
  - `expo CLI`
- - `expo go` ( For testing app with mobile devices )
+ - `expo go` ( For running app with mobile devices pre-compilation)
+### Installation
+ 1. Clone this repositories on your local devices
+ ```
+ git clone https://github.com/siatoes2550/Heart-Disease-App/
+ ```
+2
