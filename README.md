@@ -32,8 +32,8 @@ An react native expo project for quick cardiovescular risk diagnosis.
  npm start
  ```
 
- [!IMPORTANT]
- To access google sheet function, you must create an .env file on project root directories and paste the following data:
+ >[!IMPORTANT]
+ >To access google sheet function, you must create an .env file on project root directories and paste the following data:
  ```
  EXPO_PUBLIC_APIKEY: "INSERT_HERE" //Your backend api access key.
  EXPO_PUBLIC_DATA_SERVER: "https://example.app/" //Link to your API data server
