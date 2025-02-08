@@ -90,6 +90,7 @@ const Form = () => {
     if (totalselected.value == maxpossibleanswer){
       handleriskchange(formaccumulatedrisk.value);
       router.push({pathname:"/result"});
+      data["Risk"] = accumulatedrisk
       handleformchange(true);
       if (optinsenddata == true){
         sendData({arg: data})

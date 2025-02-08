@@ -77,12 +77,12 @@ export const agedatacollect:ConditionMap = {
     RenderPriority:2,
     Option:[
       {
-        Description: localization("male"),
+        Description: "ผู้ชาย",
         Riskfactor:0,
         DisplayIndex: 1
       },
       {
-        Description: localization("female"),
+        Description: "ผู้หญิง",
         Riskfactor:0,
         DisplayIndex: 2,
       },

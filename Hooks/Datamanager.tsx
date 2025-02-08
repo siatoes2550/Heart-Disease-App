@@ -62,19 +62,19 @@ export const sendData = async ({arg}:argumenfordata) => {
   let datatosend:Datatosend = {...arg, "key":undefined};
   datatosend["key"] = APIkey;
   console.log(datatosend);
-  try {
-    fetch (dataserverlink,
-      {method:"POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(datatosend),
-      } 
-    ) 
-    console.log("Data sended successfully")
-  } catch (error) {
-    console.log(error)
-  }
+  // try {
+  //   fetch (dataserverlink,
+  //     {method:"POST",
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(datatosend),
+  //     } 
+  //   ) 
+  //   console.log("Data sended successfully")
+  // } catch (error) {
+  //   console.log(error)
+  // }
 }
 
 // // save local data
