@@ -85,4 +85,4 @@ An react native expo project for quick cardiovescular risk diagnosis.
        ```
        
 ### Export && Deploy to mobile
-  
+  see more at https://docs.expo.dev/more/expo-cli/
